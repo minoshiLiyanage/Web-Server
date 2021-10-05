@@ -74,6 +74,16 @@ void send_new(int fd, char *msg) {
 }
 
 /*
+ A helper function
+ */
+void send_new_secret(int fd, char *msg) {
+ int len = strlen(msg);
+ if (send(fd, msg, len, 0) == -1) {
+  printf("Error in send\n");
+ }
+}
+
+/*
  This function recieves the buffer
  until an "End of line(EOL)" byte is recieved
  */
